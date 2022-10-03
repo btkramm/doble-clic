@@ -1,9 +1,11 @@
-import { faker } from '@faker-js/faker';
+import { useContext } from 'react';
+
+import AuthenticationContext from '../contexts/authentication-context';
 
 const useCurrentUser = () => {
-  return {
-    id: faker.datatype.uuid(),
-  };
+  const currentUser = useContext(AuthenticationContext);
+
+  return currentUser;
 };
 
 export default useCurrentUser;

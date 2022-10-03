@@ -1,9 +1,12 @@
 import { useRouter } from 'next/router';
 
 import { Meta } from '@/layouts/Meta';
+import useCurrentUser from '@/modules/authentication/hooks/use-current-user';
 import { Main } from '@/templates/Main';
 
 const Index = () => {
+  const currentUser = useCurrentUser();
+
   const router = useRouter();
 
   return (
@@ -15,6 +18,7 @@ const Index = () => {
         />
       }
     >
+      Hello {currentUser?.id}
       <a href="https://github.com/ixartz/Next-js-Boilerplate">
         <img
           src={`${router.basePath}/assets/images/nextjs-starter-banner.png`}
