@@ -5,7 +5,7 @@ import { fakeUser } from '../factories';
 import type { IUser } from '../types';
 import AuthenticationContext from './authentication-context';
 
-function AuthenticationProvider({ children }: PropsWithChildren): JSX.Element {
+function AuthenticationProvider({ children }: PropsWithChildren) {
   const [currentUser, setCurrentUser] = useState<IUser | undefined>(fakeUser());
 
   return (

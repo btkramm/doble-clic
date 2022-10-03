@@ -1,4 +1,5 @@
 import { Meta } from '@/layouts/Meta';
+import client from '@/modules/api/utils';
 import useCurrentUser from '@/modules/authentication/hooks/use-current-user';
 import useSignIn from '@/modules/authentication/hooks/use-sign-in';
 import useSignOut from '@/modules/authentication/hooks/use-sign-out';
@@ -25,6 +26,7 @@ const Index = () => {
       ) : (
         <button onClick={signIn}>Sign in</button>
       )}
+      <button onClick={() => client.get('/bad-request')}>Do a request</button>
     </Main>
   );
 };
