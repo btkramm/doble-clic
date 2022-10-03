@@ -12,8 +12,8 @@ function AuthenticationProvider({ children }: PropsWithChildren): JSX.Element {
     <AuthenticationContext.Provider
       value={{
         currentUser,
-        signOut: async () => setCurrentUser(undefined),
         signIn: async () => setCurrentUser(fakeUser()),
+        signOut: async () => setCurrentUser(undefined),
       }}
     >
       {children}

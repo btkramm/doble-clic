@@ -4,8 +4,8 @@ import type { IUser } from '../types';
 
 export interface IAuthenticationContext {
   currentUser?: IUser;
-  signOut: () => Promise<void>;
   signIn: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 
 const AuthenticationContext = React.createContext<
