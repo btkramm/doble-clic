@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import client from '../../api/utils';
 import useSignOut from '../hooks/use-sign-out';
 
+const isUnauthenticatedError = (error: any) => error.response.status === 404;
+
 function UnuthenticationGuard({ children }: { children: JSX.Element }) {
   const signOut = useSignOut();
 
@@ -10,7 +12,7 @@ function UnuthenticationGuard({ children }: { children: JSX.Element }) {
     const interceptor = client.interceptors.response.use(
       (_) => _,
       (error) => {
-        if (error.response.status === 404) {
+        if (isUnauthenticatedError(error)) {
           signOut?.call(signOut);
         }
 
