@@ -2,10 +2,10 @@ import { useContext } from 'react';
 
 import AuthenticationContext from '../contexts/authentication-context';
 
-const useCurrentUser = () => {
+const useSignIn = () => {
   const context = useContext(AuthenticationContext);
 
-  return context?.currentUser;
+  return context?.signIn;
 };
 
-export default useCurrentUser;
+export default useSignIn;
