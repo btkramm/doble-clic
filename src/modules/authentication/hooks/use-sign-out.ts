@@ -2,10 +2,10 @@ import { useContext } from 'react';
 
 import AuthenticationContext from '../contexts/AuthenticationContext';
 
-const useCurrentUser = () => {
+const useSignOut = () => {
   const context = useContext(AuthenticationContext);
 
-  return context?.currentUser;
+  return context?.signOut;
 };
 
-export default useCurrentUser;
+export default useSignOut;
